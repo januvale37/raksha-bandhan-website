@@ -1,3 +1,33 @@
+// =================================================
+// PASSWORD
+// =================================================
+
+function checkPassword() {
+
+    const password =
+        document.getElementById("passwordInput").value;
+
+    const correctPassword = "VASU8096";
+
+    if (password === correctPassword) {
+
+        document.getElementById("passwordScreen").style.display = "none";
+
+        // Show the main website
+        document.getElementById("start").classList.add("active");
+
+    } else {
+
+        document.getElementById("passwordError").textContent =
+            "❌ Wrong password! Try again.";
+
+        document.getElementById("passwordInput").value = "";
+
+        document.getElementById("passwordInput").focus();
+
+    }
+}
+
 /* =========================================
    CHANGE SCREEN
 ========================================= */
