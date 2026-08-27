@@ -30,6 +30,48 @@
 
 <body>
 
+    <!-- =================================================
+     PASSWORD SCREEN
+================================================= -->
+
+<section id="passwordScreen">
+
+    <div class="password-box">
+
+        <div class="omni giant">
+            <span>X</span>
+        </div>
+
+        <div class="system">
+            CLASSIFIED BROTHER MISSION
+        </div>
+
+        <h1>
+            🔐 ACCESS REQUIRED
+        </h1>
+
+        <p>
+            Only the legendary brother<br>
+            can enter this mission.
+        </p>
+
+        <input
+            type="password"
+            id="passwordInput"
+            placeholder="Enter password"
+            onkeydown="if(event.key === 'Enter') checkPassword()"
+        >
+
+        <button class="btn" onclick="checkPassword()">
+            UNLOCK MISSION ▶
+        </button>
+
+        <p id="passwordError"></p>
+
+    </div>
+
+</section>
+
 
 <!-- =================================================
      BACKGROUND STARS
