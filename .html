@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Raksha Bandhan Mission</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Orbitron:wght@500;700;900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =================================================
+     BACKGROUND STARS
+================================================= -->
+
+<div class="stars" id="stars"></div>
+
+
+
+<!-- =================================================
+     START SCREEN
+================================================= -->
+
+<section class="screen active" id="start">
+
+    <div class="omni giant">
+        <span>X</span>
+    </div>
+
+    <div class="system">
+        OMNITRIX SYSTEM // ONLINE
+    </div>
+
+    <h1>
+
+        RAKSHA BANDHAN
+
+        <br>
+
+        <em>MISSION</em>
+
+    </h1>
+
+    <p class="subtitle">
+
+        A special mission has been created
+        for one legendary brother. 💚
+
+    </p>
+
+    <button class="btn"
+            onclick="goTo('level1')">
+
+        START MISSION ▶
+
+    </button>
+
+</section>
+
+
+
+
+<!-- =================================================
+     LEVEL 1
+================================================= -->
+
+<section class="screen" id="level1">
+
+    <div class="level">
+        LEVEL 01 / 05
+    </div>
+
+    <div class="hud">
+
+        <span>OMNITRIX</span>
+
+        <span>● ONLINE</span>
+
+    </div>
+
+
+    <div class="content center">
+
+
+        <div class="signal">
+
+            INCOMING TRANSMISSION...
+
+        </div>
+
+
+        <div class="omni medium">
+
+            <span>X</span>
+
+        </div>
+
+
+        <h2>
+
+            MISSION DETECTED
+
+        </h2>
+
+
+        <p>
+
+            Your mission is simple:
+
+            <br><br>
+
+            <strong>
+
+                Make it through every level
+                to unlock your sister's final message.
+
+            </strong>
+
+        </p>
+
+
+        <div class="mission-box">
+
+            TARGET:
+            <b>THE BEST BROTHER</b>
+
+            <br>
+
+            MISSION STATUS:
+            <b>READY</b>
+
+        </div>
+
+
+        <button class="btn"
+                onclick="complete('level1','level2')">
+
+            ACCEPT MISSION →
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+
+<!-- =================================================
+     LEVEL 2 — OUR MEMORIES
+================================================= -->
+
+<section class="screen" id="level2">
+
+
+    <div class="level">
+
+        LEVEL 02 / 05
+
+    </div>
+
+
+    <div class="hud">
+
+        <span>MEMORY DATABASE</span>
+
+        <span>FILE 02</span>
+
+    </div>
+
+
+    <div class="content">
+
+
+        <div class="signal">
+
+            MEMORY DATABASE UNLOCKED
+
+        </div>
+
+
+        <h2>
+
+            OUR MEMORIES
+
+        </h2>
+
+
+        <p class="hint">
+
+            A few memories from our journey 💚
+
+        </p>
+
+
+        <!-- =========================================
+             PHOTO GRID
+        ========================================= -->
+
+
+        <div class="memory-grid">
+
+
+            <!-- PHOTO 1 -->
+
+            <div class="memory">
+
+                <img src="images/image1.jpg.jpeg"
+                     alt="Our first memory">
+
+                <b>
+
+                    Partners in crime 😎
+
+                </b>
+
+            </div>
+
+
+
+            <!-- PHOTO 2 -->
+
+            <div class="memory">
+
+                <img src="images/image2.jpg.jpeg"
+                     alt="Our second memory">
+
+                <b>
+
+                    Best memories 💚
+
+                </b>
+
+            </div>
+
+
+
+            <!-- PHOTO 3 -->
+
+            <div class="memory">
+
+                <img src="images/image3.jpg.jpeg"
+                     alt="Our third memory">
+
+                <b>
+
+                    Forever siblings 🫶
+
+                </b>
+
+            </div>
+
+
+        </div>
+
+
+        <button class="btn"
+                onclick="complete('level2','level3')">
+
+            UNLOCK NEXT LEVEL →
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+
+<!-- =================================================
+     LEVEL 3 — SECRET LETTER
+================================================= -->
+
+<section class="screen" id="level3">
+
+
+    <div class="level">
+
+        LEVEL 03 / 05
+
+    </div>
+
+
+    <div class="hud">
+
+        <span>CLASSIFIED MESSAGE</span>
+
+        <span>ENCRYPTED</span>
+
+    </div>
+
+
+    <div class="content center">
+
+
+        <div class="lock">
+
+            🔒
+
+        </div>
+
+
+        <div class="signal">
+
+            ACCESS RESTRICTED
+
+        </div>
+
+
+        <h2>
+
+            SECRET LETTER
+
+        </h2>
+
+
+        <p>
+
+            Only the legendary brother
+            can unlock this message.
+
+        </p>
+
+
+        <!-- ENVELOPE -->
+
+        <div class="envelope" id="envelope">
+
+            <div class="flap"></div>
+
+            <div class="seal">
+
+                X
+
+            </div>
+
+        </div>
+
+
+        <button class="btn"
+                id="openLetter"
+                onclick="openLetter()">
+
+            UNLOCK MESSAGE 💌
+
+        </button>
+
+
+
+        <!-- LETTER -->
+
+        <article class="letter"
+                 id="letter">
+
+
+            <h3>
+
+                Dear Annaya,
+
+            </h3>
+
+
+            <p>
+
+                You are not just my brother;
+                you are someone I can always
+                count on.
+
+            </p>
+
+
+            <p>
+
+                From silly fights and annoying
+                each other to laughing over the
+                smallest things, every memory
+                with you is special to me.
+
+            </p>
+
+
+            <p>
+
+                Thank you for protecting me,
+                supporting me, making me laugh,
+                and simply being there.
+
+            </p>
+
+
+            <p>
+
+                No matter how much we grow
+                or where life takes us, I hope
+                our bond always stays this strong.
+
+            </p>
+
+
+            <strong>
+
+                Happy Raksha Bandhan, Annaya! 💚
+
+            </strong>
+
+
+            <p>
+
+                Love you always,
+
+                <br>
+
+                Your crazy sister 😜
+
+            </p>
+
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+
+<!-- =================================================
+     LEVEL 4 — BROTHER PROFILE
+================================================= -->
+
+<section class="screen" id="level4">
+
+
+    <div class="level">
+
+        LEVEL 04 / 05
+
+    </div>
+
+
+    <div class="hud">
+
+        <span>BROTHER SCAN</span>
+
+        <span>PROFILE ACTIVE</span>
+
+    </div>
+
+
+    <div class="content center">
+
+
+        <div class="scanner">
+
+            SCANNING BROTHER...
+
+        </div>
+
+
+        <h2>
+
+            BROTHER PROFILE
+
+        </h2>
+
+
+        <div class="profile">
+
+
+            <div class="avatar">
+
+                👦
+
+            </div>
+
+
+            <div class="stats">
+
+
+                <p>
+
+                    <b>NAME</b>
+
+                    <span>
+                        MY SUPER BROTHER
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <b>LEVEL</b>
+
+                    <span>
+                        LEGENDARY ⭐
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <b>POWER</b>
+
+                    <span>
+                        PROTECTIVE
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <b>SKILLS</b>
+
+                    <span>
+                        FUNNY • CARING • ANNOYING 😂
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <b>WEAKNESS</b>
+
+                    <span>
+
+                     TOO MUCH LOGIC, NOT ENOUGH EMOTION 😂
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <b>MISSION</b>
+
+                    <span>
+                        MAKE MEMORIES
+                    </span>
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+        <button class="btn"
+                onclick="complete('level4','level5')">
+
+            CONTINUE →
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+
+<!-- =================================================
+     LEVEL 5 — ALIEN MODE
+================================================= -->
+
+<section class="screen" id="level5">
+
+
+    <div class="level">
+
+        LEVEL 05 / 05
+
+    </div>
+
+
+    <div class="hud">
+
+        <span>ALIEN DATABASE</span>
+
+        <span>SELECT MODE</span>
+
+    </div>
+
+
+    <div class="content center">
+
+
+        <div class="signal">
+
+            OMNITRIX PERSONALITY SCAN
+
+        </div>
+
+
+        <h2>
+
+            ALIEN MODE
+
+        </h2>
+
+
+        <p>
+
+            Tap the Omnitrix to discover
+            today's brother mode.
+
+        </p>
+
+
+        <button class="selector"
+                onclick="selectAlien()">
+
+
+            <div class="omni">
+
+                <span>X</span>
+
+            </div>
+
+
+        </button>
+
+
+        <div class="alien-result"
+             id="alienResult">
+
+
+            <h3>?</h3>
+
+
+            <p>
+
+                SELECT AN ALIEN
+
+            </p>
+
+
+        </div>
+
+
+        <button class="btn hidden"
+                id="finishBtn"
+                onclick="goTo('final')">
+
+            ENTER FINAL LEVEL →
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+
+<!-- =================================================
+     FINAL LEVEL
+================================================= -->
+
+<section class="screen" id="final">
+
+
+    <div class="final-burst"></div>
+
+
+    <div class="level">
+
+        FINAL LEVEL / MISSION COMPLETE
+
+    </div>
+
+
+    <div class="content center">
+
+
+        <div class="omni giant final-omni">
+
+            <span>X</span>
+
+        </div>
+
+
+        <div class="signal">
+
+            ALL LEVELS COMPLETED ✓
+
+        </div>
+
+
+        <h2>
+
+            MISSION
+
+            <br>
+
+            <em>COMPLETE!</em>
+
+        </h2>
+
+
+        <p class="final-message">
+
+            No matter how much we fight,
+
+            <br>
+
+            you'll always be my brother.
+
+        </p>
+
+
+        <h3 class="rakhi">
+
+            💚 HAPPY RAKSHA BANDHAN,
+            Annaya! 💚
+
+        </h3>
+
+
+        <p class="small">
+
+            Brother status: LEGENDARY
+
+            <br><br>
+
+            Sister status:
+            PERMANENTLY ANNOYING 😜
+
+        </p>
+
+
+        <button class="btn"
+                onclick="restart()">
+
+            REPLAY MISSION ↻
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+
+<!-- LEVEL UNLOCK MESSAGE -->
+
+<div class="toast" id="toast">
+
+    LEVEL UNLOCKED ✓
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

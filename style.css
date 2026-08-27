@@ -1,0 +1,1458 @@
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+:root {
+
+    --green: #9cff00;
+
+    --green2: #48ff00;
+
+    --dark: #020502;
+
+    --panel: #071107;
+
+    --white: #f4fff0;
+
+}
+
+
+html,
+body {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+}
+
+
+body {
+
+    font-family: "Orbitron",
+                 Arial,
+                 sans-serif;
+
+    background: #010301;
+
+    color: var(--white);
+
+}
+
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -3;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 45%,
+            #153b10,
+            transparent 40%
+        ),
+
+        linear-gradient(
+            #010401,
+            #020702
+        );
+
+}
+
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    opacity: .12;
+
+    background:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 3px,
+            rgba(255,255,255,.05) 4px
+        );
+
+}
+
+
+/* =========================================
+   STARS
+========================================= */
+
+
+.stars {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+}
+
+
+.star {
+
+    position: absolute;
+
+    width: 3px;
+
+    height: 3px;
+
+    background: var(--green);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px var(--green);
+
+    animation:
+        drift 6s linear infinite;
+
+}
+
+
+@keyframes drift {
+
+    from {
+
+        transform:
+            translateY(105vh);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: .8;
+
+    }
+
+    to {
+
+        transform:
+            translateY(-10vh);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================
+   SCREENS
+========================================= */
+
+
+.screen {
+
+    display: none;
+
+    width: 100%;
+
+    height: 100%;
+
+    padding:
+        70px
+        7vw
+        40px;
+
+    position: relative;
+
+    overflow-y: auto;
+
+}
+
+
+.screen.active {
+
+    display: block;
+
+    animation:
+        enter .55s ease;
+
+}
+
+
+@keyframes enter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(1.03);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================
+   HUD
+========================================= */
+
+
+.level {
+
+    position: absolute;
+
+    left: 7vw;
+
+    top: 24px;
+
+    color: var(--green);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    font-weight: 900;
+
+}
+
+
+.hud {
+
+    position: absolute;
+
+    right: 7vw;
+
+    top: 24px;
+
+    color: #628c5b;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    display: flex;
+
+    gap: 25px;
+
+}
+
+
+.hud span:first-child {
+
+    color: #cde6c7;
+
+}
+
+
+/* =========================================
+   TEXT
+========================================= */
+
+
+.content {
+
+    width:
+        min(1050px,100%);
+
+    margin:
+        25px auto;
+
+    text-align: center;
+
+}
+
+
+.center {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height:
+        calc(100vh - 130px);
+
+}
+
+
+.system,
+.signal {
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: var(--green);
+
+    margin: 12px 0;
+
+}
+
+
+.screen h1,
+.screen h2 {
+
+    font-family:
+        "Bangers",
+        cursive;
+
+    letter-spacing: 2px;
+
+}
+
+
+.screen h1 {
+
+    font-size:
+        clamp(65px,10vw,125px);
+
+    line-height: .8;
+
+    text-shadow:
+        5px 5px #0b1908;
+
+}
+
+
+.screen h1 em,
+.screen h2 em {
+
+    font-style: normal;
+
+    color: var(--green);
+
+}
+
+
+.screen h2 {
+
+    font-size:
+        clamp(55px,7vw,90px);
+
+    line-height: .85;
+
+    margin:
+        18px 0;
+
+}
+
+
+.subtitle {
+
+    max-width: 600px;
+
+    color: #c4d0c0;
+
+    line-height: 1.7;
+
+    margin:
+        25px auto
+        30px;
+
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+
+.btn {
+
+    border:
+        1px solid var(--green);
+
+    background:
+        #071b06;
+
+    color:
+        var(--green);
+
+    padding:
+        15px 24px;
+
+    font:
+        900 11px
+        "Orbitron";
+
+    letter-spacing:
+        1.5px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 25px
+        rgba(156,255,0,.12);
+
+    transition: .2s;
+
+    margin-top: 20px;
+
+}
+
+
+.btn:hover {
+
+    background:
+        var(--green);
+
+    color:
+        #061000;
+
+    box-shadow:
+        0 0 35px
+        rgba(156,255,0,.5);
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* =========================================
+   OMNITRIX
+========================================= */
+
+
+.omni {
+
+    border-radius: 50%;
+
+    background: #131613;
+
+    border:
+        13px double #353a35;
+
+    padding: 14px;
+
+    box-shadow:
+        0 0 40px
+        rgba(130,255,20,.5);
+
+    display: grid;
+
+    place-items: center;
+
+}
+
+
+.omni span {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 50%;
+
+    background:
+        var(--green);
+
+    color:
+        #071000;
+
+    font-weight: 900;
+
+}
+
+
+.giant {
+
+    width: 190px;
+
+    height: 190px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.giant span {
+
+    font-size: 65px;
+
+}
+
+
+.medium {
+
+    width: 120px;
+
+    height: 120px;
+
+}
+
+
+.medium span {
+
+    font-size: 40px;
+
+}
+
+
+/* =========================================
+   LEVEL 1
+========================================= */
+
+
+.mission-box {
+
+    border:
+        1px solid #385d2e;
+
+    background:
+        #061006;
+
+    padding:
+        18px 30px;
+
+    line-height: 2;
+
+    margin:
+        25px 0;
+
+    color:
+        #9eb19a;
+
+    font-size: 10px;
+
+}
+
+
+.mission-box b {
+
+    color:
+        var(--green);
+
+}
+
+
+/* =========================================
+   LEVEL 2 — MEMORY PHOTOS
+========================================= */
+
+
+.hint {
+
+    color:
+        #899987;
+
+    font-size:
+        11px;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.memory-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:
+        25px;
+
+    margin:
+        20px auto;
+
+    width:
+        min(900px,100%);
+
+}
+
+
+.memory {
+
+    height:
+        300px;
+
+    background:
+        #eff1df;
+
+    color:
+        #182016;
+
+    padding:
+        12px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        flex-end;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 15px 30px #000;
+
+    transform:
+        rotate(-2deg);
+
+    transition:
+        .25s;
+
+}
+
+
+.memory:nth-child(2) {
+
+    transform:
+        rotate(2deg);
+
+}
+
+
+.memory:nth-child(3) {
+
+    transform:
+        rotate(-1deg);
+
+}
+
+
+.memory:hover {
+
+    transform:
+        translateY(-8px)
+        rotate(0);
+
+}
+
+
+/* ⭐ IMPORTANT IMAGE CODE ⭐ */
+
+
+.memory img {
+
+    width:
+        100%;
+
+    height:
+        245px;
+
+    object-fit:
+        cover;
+
+    display:
+        block;
+
+}
+
+
+/* =========================================
+   MEMORY TITLE
+========================================= */
+
+
+.memory b {
+
+    padding:
+        8px 2px 2px;
+
+    font-family:
+        "Bangers",
+        cursive;
+
+    font-size:
+        18px;
+
+}
+
+
+/* =========================================
+   LEVEL 3 — LETTER
+========================================= */
+
+
+.lock {
+
+    font-size:
+        38px;
+
+}
+
+
+.envelope {
+
+    width:
+        280px;
+
+    height:
+        190px;
+
+    background:
+        #eadfc8;
+
+    position:
+        relative;
+
+    margin:
+        20px auto;
+
+    box-shadow:
+        0 18px 40px #000;
+
+    transition:
+        .5s;
+
+}
+
+
+.flap {
+
+    position:
+        absolute;
+
+    inset:
+        0 0 auto;
+
+    height:
+        105px;
+
+    background:
+        #d5c3a3;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+}
+
+
+.seal {
+
+    position:
+        absolute;
+
+    width:
+        60px;
+
+    height:
+        60px;
+
+    left:
+        50%;
+
+    top:
+        80px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50%;
+
+    background:
+        #111;
+
+    border:
+        5px solid var(--green);
+
+    color:
+        var(--green);
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    font-weight:
+        900;
+
+    z-index:
+        2;
+
+}
+
+
+.envelope.open {
+
+    transform:
+        translateY(-15px)
+        rotate(-2deg);
+
+}
+
+
+.letter {
+
+    display:
+        none;
+
+    max-width:
+        720px;
+
+    background:
+        #f3ead3;
+
+    color:
+        #2b3128;
+
+    padding:
+        30px 35px;
+
+    text-align:
+        left;
+
+    line-height:
+        1.65;
+
+    font-family:
+        Georgia,
+        serif;
+
+    box-shadow:
+        0 15px 35px #000;
+
+    margin-top:
+        10px;
+
+}
+
+
+.letter.show {
+
+    display:
+        block;
+
+    animation:
+        letterIn .7s ease;
+
+}
+
+
+@keyframes letterIn {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            none;
+
+    }
+
+}
+
+
+.letter h3 {
+
+    color:
+        #48742e;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.letter p {
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.letter strong {
+
+    color:
+        #3f8420;
+
+    font-size:
+        19px;
+
+}
+
+
+/* =========================================
+   LEVEL 4
+========================================= */
+
+
+.profile {
+
+    width:
+        min(800px,100%);
+
+    display:
+        grid;
+
+    grid-template-columns:
+        250px 1fr;
+
+    gap:
+        25px;
+
+    text-align:
+        left;
+
+    border:
+        1px solid #365c2a;
+
+    background:
+        #061006;
+
+    padding:
+        25px;
+
+    box-shadow:
+        0 0 35px
+        rgba(80,255,0,.07);
+
+}
+
+
+.avatar {
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    font-size:
+        150px;
+
+    background:
+        radial-gradient(
+            circle,
+            #234d13,
+            transparent 65%
+        );
+
+}
+
+
+.stats p {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        100px 1fr;
+
+    border-bottom:
+        1px solid #29491f;
+
+    padding:
+        13px 0;
+
+    font-size:
+        10px;
+
+    gap:
+        12px;
+
+}
+
+
+.stats b {
+
+    color:
+        var(--green);
+
+}
+
+
+.stats span {
+
+    color:
+        #d2dfcf;
+
+}
+
+
+.scanner {
+
+    color:
+        var(--green);
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        3px;
+
+    animation:
+        blink 1s infinite;
+
+}
+
+
+@keyframes blink {
+
+    50% {
+
+        opacity:
+            .25;
+
+    }
+
+}
+
+
+/* =========================================
+   LEVEL 5
+========================================= */
+
+
+.selector {
+
+    background:
+        none;
+
+    border:
+        0;
+
+    cursor:
+        pointer;
+
+    margin:
+        10px;
+
+}
+
+
+.selector .omni {
+
+    width:
+        170px;
+
+    height:
+        170px;
+
+    transition:
+        .25s;
+
+}
+
+
+.selector:hover .omni {
+
+    transform:
+        scale(1.05);
+
+    box-shadow:
+        0 0 65px
+        rgba(130,255,20,.7);
+
+}
+
+
+.selector:active .omni {
+
+    transform:
+        scale(.92)
+        rotate(25deg);
+
+}
+
+
+.alien-result {
+
+    min-height:
+        105px;
+
+}
+
+
+.alien-result h3 {
+
+    font:
+        45px "Bangers";
+
+    color:
+        var(--green);
+
+}
+
+
+.alien-result p {
+
+    font-size:
+        10px;
+
+    color:
+        #b4c1b0;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+.hidden {
+
+    display:
+        none;
+
+}
+
+
+/* =========================================
+   FINAL LEVEL
+========================================= */
+
+
+.final-burst {
+
+    position:
+        absolute;
+
+    width:
+        600px;
+
+    height:
+        600px;
+
+    border-radius:
+        50%;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(130,255,20,.18),
+            transparent 65%
+        );
+
+    animation:
+        pulse 2s infinite;
+
+}
+
+
+@keyframes pulse {
+
+    50% {
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.15);
+
+        opacity:
+            .7;
+
+    }
+
+}
+
+
+.final-message {
+
+    font-size:
+        15px;
+
+    line-height:
+        2;
+
+    color:
+        #d0dbcc;
+
+    margin:
+        10px 0;
+
+}
+
+
+.rakhi {
+
+    font-family:
+        "Bangers";
+
+    color:
+        var(--green);
+
+    font-size:
+        30px;
+
+    letter-spacing:
+        1px;
+
+    margin:
+        10px;
+
+}
+
+
+.small {
+
+    font-size:
+        9px;
+
+    color:
+        #72806f;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+/* =========================================
+   TOAST
+========================================= */
+
+
+.toast {
+
+    position:
+        fixed;
+
+    bottom:
+        25px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%)
+        translateY(100px);
+
+    background:
+        var(--green);
+
+    color:
+        #061000;
+
+    padding:
+        12px 20px;
+
+    font-weight:
+        900;
+
+    font-size:
+        10px;
+
+    z-index:
+        50;
+
+    transition:
+        .35s;
+
+    box-shadow:
+        0 0 25px
+        rgba(156,255,0,.4);
+
+}
+
+
+.toast.show {
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+
+@media(max-width:750px) {
+
+
+    .screen {
+
+        padding:
+            65px
+            5vw
+            25px;
+
+    }
+
+
+    .level {
+
+        left:
+            5vw;
+
+    }
+
+
+    .hud {
+
+        right:
+            5vw;
+
+    }
+
+
+    .memory-grid {
+
+        grid-template-columns:
+            1fr;
+
+        max-width:
+            340px;
+
+    }
+
+
+    .memory {
+
+        height:
+            280px;
+
+    }
+
+
+    .memory img {
+
+        height:
+            225px;
+
+    }
+
+
+    .profile {
+
+        grid-template-columns:
+            1fr;
+
+        text-align:
+            center;
+
+    }
+
+
+    .avatar {
+
+        height:
+            190px;
+
+    }
+
+
+    .stats {
+
+        text-align:
+            left;
+
+    }
+
+
+    .screen h1 {
+
+        font-size:
+            65px;
+
+    }
+
+
+    .screen h2 {
+
+        font-size:
+            58px;
+
+    }
+
+
+    .giant {
+
+        width:
+            150px;
+
+        height:
+            150px;
+
+    }
+
+
+    .giant span {
+
+        font-size:
+            50px;
+
+    }
+
+
+    .hud span:last-child {
+
+        display:
+            none;
+
+    }
+
+}
